@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:2.7-alpine3.6
+        environment:
+          PYTHONUSERBASE: /app/vendor
+          PYTHONPATH: '/app/vendor/lib/python2.7/site-packages'
+          PATH: '/app/vendor/bin:$PATH'
+    working_directory: /app
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
