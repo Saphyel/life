@@ -6,9 +6,10 @@ jobs:
         environment:
           PYTHONUSERBASE: /app/vendor
           PYTHONPATH: '/app/vendor/lib/python2.7/site-packages'
-          PATH: '/app/vendor/bin:$PATH'
-    working_directory: /app
+          PATH: '/app/vendor/bin:/usr/local/bin:$PATH'
+    working_directory: /app/
     steps:
       - checkout
       - run: pip install -r requirements.txt
       - run: python -m pytest --cov=life
+      - run: behave
