@@ -11,3 +11,4 @@ jobs:
     steps:
       - checkout
       - run: pip install -r requirements.txt
+      - run: python -m pytest --cov=life

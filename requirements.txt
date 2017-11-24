@@ -1,0 +1,4 @@
+# Testing
+pytest==3.2.5
+behave==1.2.5
+pytest-cov==2.5.1
