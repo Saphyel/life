@@ -10,24 +10,17 @@ def test_get_pos():
 def test_is_a_neighbour():
     cell = Cell(1, 1)
     assert cell.is_a_neighbour([2, 2]) is True
+    assert cell.is_a_neighbour([3, 3]) is False
 
 
-def test_rules_alive():
+def test_rules():
     cell = Cell(1, 1)
     cell.set_neighbours(2)
     cell.rules_alive()
     assert cell.is_alive() is True
-
-
-def test_validate():
-    cell = Cell(1, 1)
     cell.set_neighbours(1)
     cell.validate()
     assert cell.is_alive() is False
-
-
-def test_rules_dead():
-    cell = Cell(1, 1)
     cell.set_neighbours(3)
-    cell.rules_dead()
+    cell.validate()
     assert cell.is_alive() is True

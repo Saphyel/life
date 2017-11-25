@@ -1,5 +1,7 @@
 *.pyc
 /.coverage
+/coverage.*
+/reports/
 /vendor/
 /.cache/
 /.idea/
